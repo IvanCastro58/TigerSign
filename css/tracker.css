@@ -235,14 +235,14 @@ header .logo1 img {
     }
 
     .heading-results {
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 15px;
+        font-weight: 500;
         color: var(--white);
         text-align: center;
     }
     
     .check-icon {
-        font-size: 70px;
+        font-size: 60px;
         color: var(--white);
         margin-top: 10px;
     }
@@ -284,14 +284,14 @@ header .logo1 img {
     }
 
     .heading-results {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
         color: var(--white);
         text-align: center;
     }
     
     .check-icon {
-        font-size: 60px;
+        font-size: 50px;
         color: var(--white);
         margin-top: 10px;
     }
@@ -339,6 +339,19 @@ header .logo1 img {
     
     .search-button {
         font-size: 18px;
+    }
+
+    .heading-results {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--white);
+        text-align: center;
+    }
+    
+    .check-icon {
+        font-size: 60px;
+        color: var(--white);
+        margin-top: 10px;
     }
 
     .info-text {
@@ -394,6 +407,19 @@ header .logo1 img {
     
     .search-button {
         font-size: 14px;
+    }
+
+    .heading-results {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--white);
+        text-align: center;
+    }
+    
+    .check-icon {
+        font-size: 60px;
+        color: var(--white);
+        margin-top: 10px;
     }
 
     .info-text {
