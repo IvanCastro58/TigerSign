@@ -1,32 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const startPicker = flatpickr(".start-date", {
-        dateFormat: "d M Y",
-        defaultDate: "10 Aug 2024",
-        onChange: function(selectedDates, dateStr, instance) {
-            instance.element.innerText = dateStr;
-        }
-    });
-
-    const endPicker = flatpickr(".end-date", {
-        dateFormat: "d M Y",
-        defaultDate: "10 Aug 2024",
-        onChange: function(selectedDates, dateStr, instance) {
-            instance.element.innerText = dateStr;
-        }
-    });
-
-    document.querySelectorAll('.calendar-icon').forEach(icon => {
-        icon.addEventListener('click', function() {
-            const targetClass = this.getAttribute('data-target');
-            if (targetClass === 'start-date') {
-                startPicker.open();
-            } else if (targetClass === 'end-date') {
-                endPicker.open();
-            }
-        });
-    });
-
     const rows = document.querySelectorAll('.transaction-table tbody tr');
     
     rows.forEach(row => {
@@ -49,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const status = dropdown.value;
         
         dropdown.classList.remove('status-paid', 'status-processing', 'status-available');
-
+        
         switch (status) {
             case 'paid':
                 dropdown.classList.add('status-paid');
