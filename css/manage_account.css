@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color: #F4BB00;
+    --secondary-color: #5D4600;
+    --accent-color: #3B2D00;
+    --light-gray: #a1a1a1;
+    --dark-gray: #1a1a1a;
+    --medium-gray: #303030;
+    --blackish: #101010;
+    --blue: #3B83FB;
+    --white: #ffffff;
+    --green: #1C8454;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.account-navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid var(--light-gray);
+    margin-top: 40px;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--blackish);
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+.button-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 0px;
+}
+
+.add-user-btn{
+    background-color: var(--green);
+    color: var(--white);
+    font-size: 12px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.add-user-btn i{
+    font-size: 12px;
+    margin-right: 5px;
+    font-weight: 600;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-button {
+    position: absolute;
+    left: 0;
+    border: none;
+    background: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.search-button:hover .search-icon {
+    color: var(--medium-gray);
+    font-weight: 600;
+}
+
+.search-icon {
+    color: var(--light-gray);
+    font-size: 14px;
+}
+
+.search-input {
+    padding: 10px 10px 10px 40px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    width: 300px;
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-input:focus {
+    border-color: var(--medium-gray);
+}
