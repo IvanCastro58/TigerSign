@@ -34,6 +34,10 @@ body {
     overflow-x: auto;
 }
 
+.table-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
 .transaction-table {
     width: 100%;
     border-collapse: collapse;
@@ -43,7 +47,7 @@ body {
 
 .transaction-table th, .transaction-table td {
     border-bottom: 1px solid var(--light-gray);
-    padding: 10px;
+    padding: 15px;
     text-align: center;
 }
 
@@ -52,13 +56,64 @@ body {
     color: var(--white);
     position: relative;
     text-align: center;
-    padding: 10px;
+    font-size: 14px;
+    height: 30px;
 }
 
-.transaction-table td {
+.transaction-table tr {
+    position: relative;
     background-color: var(--white);
     text-align: center;
-    padding: 10px;
+    font-size: 12px;
+    height: 30px;
+    cursor: pointer;
+    overflow: hidden; 
+}
+
+.transaction-table tr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px; 
+    height: 100%;
+    background-color: var(--primary-color); 
+    transform: scaleY(0); 
+    transform-origin: center; 
+    transition: transform 0.3s ease; 
+}
+
+.transaction-table tr:hover::before {
+    transform: scaleY(1); 
+}
+
+.transaction-table tr:hover {
+    background-color: #f0f0f0; 
+}
+
+
+.profile-column img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.status-active span{
+    background-color: var(--green);
+    color: var(--white);
+    padding: 5px 20px;
+    font-size: 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
+}
+
+.status-deactivate span{
+    background-color: var(--light-gray);
+    color: var(--dark-gray);
+    padding: 5px 20px;
+    font-size: 12px;
+    border-radius: 50px;
+    text-transform: uppercase;
 }
 
 .sort-icons {
@@ -102,6 +157,7 @@ body {
     background-color: var(--white);
     text-align: center;
     appearance: none;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .status-paid {
@@ -127,6 +183,8 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .pagination {
@@ -231,6 +289,15 @@ body {
         border-bottom: 4px solid var(--primary-color);
         width: 100%;
     }
+
+    .transaction-table {
+        width: 1000px;
+    }
+
+    .status-active span,
+    .status-deactivate span{
+        font-size: 10px;
+    }
 }
 
 @media (max-width: 840px) {
@@ -246,7 +313,6 @@ body {
     .action-button {
         font-size: 10px;
     }
-
 }
 
 @media (max-width: 800px) {
@@ -306,5 +372,4 @@ body {
     .margin-content {
         padding: 5px 5px;
     }
-
 }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/sidebar.css">
     <link rel="stylesheet" href="../css/manage_account.css">
+    <link rel="stylesheet" href="../css/table.css ">
     <link rel="icon" href="../assets/images/tigersign.png" type="image/x-icon">
 </head>
 <body>
@@ -107,18 +108,86 @@
             </div>
             <div class="button-div">
                 <button class="add-user-btn"><i class="bi bi-person-plus"></i>Create User</button>
-                <div class="search-container" style="position: relative;">
-                    <button class="search-button">
-                        <i class="bi bi-search search-icon"></i>
-                    </button>
-                    <input type="text" class="search-input" placeholder="Search..." />
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
             </div>
+            <div class="table-container">
+                <div class="table-wrapper">
+                    <table class="transaction-table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    ID
+                                    <span class="sort-icons">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </span>
+                                </th>
+                                <th>
+                                    Picture
+                                </th>
+                                <th class="date-processed-column">
+                                    Name
+                                    <span class="sort-icons">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </span>
+                                </th>
+                                <th>
+                                    Email
+                                    <span class="sort-icons">
+                                        <i class="fa-solid fa-caret-up"></i>
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </span>
+                                </th>
+                                <th>
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td class="profile-column">
+                                    <img src="../assets/images/tigersign.png" alt="Profile Picture">  
+                                </td>
+                                <td class="expandable-text">Jarred Reyes</td>
+                                <td class="expandable-text">juandelacruz.registrar@ust.edu.ph</td>
+                                <td class="status-active"><span>Active</span></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td class="profile-column">
+                                    <img src="../assets/images/tigersign.png" alt="Profile Picture">  
+                                </td>
+                                <td class="expandable-text">Joshua Embestro</td>
+                                <td class="expandable-text">juandelacruz.registrar@ust.edu.ph</td>
+                                <td class="status-active"><span>Active</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="pagination">
+                <ul class="pagination-list">
+                    <li class="pagination-item"><a href="#" class="pagination-link">Prev</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link active">1</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">2</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">3</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">4</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">5</a></li>
+                    <li class="pagination-item"><a href="#" class="pagination-link">Next</a></li>
+                </ul>
+            </div>  
         </div>
     </div>
     
     <div class="overlay"></div>
     
     <script src="../javascript/sidebar.js"></script>
+    <script src="../javascript/pendingclaim.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </body>
 </html>

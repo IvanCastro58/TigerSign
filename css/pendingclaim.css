@@ -116,7 +116,6 @@ body {
 .search-input {
     font-size: 14px;
     padding: 5px 10px;
-    border: 1px solid var(--blackish);
     height: 100%;
     box-sizing: border-box;
 }
