@@ -153,10 +153,9 @@ body {
     padding: 5px;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 14px;
+    font-size: 13px;
     background-color: var(--white);
     text-align: center;
-    appearance: none;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -180,6 +179,18 @@ body {
     background-color: var(--green);
     border: none;
     color: var(--white);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.view-button {
+    padding: 5px 10px;
+    background-color: var(--primary-color);
+    border: none;
+    color: var(--blackish);
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
