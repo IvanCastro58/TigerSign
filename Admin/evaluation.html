@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - TigerSign</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="icon" href="../assets/images/tigersign.png" type="image/x-icon">
+</head>
+<body>
+    <input type="checkbox" id="menu-toggle" hidden>
+    <header>
+        <label for="menu-toggle" class="menu">
+            <span>&#9776;</span>
+        </label>
+        <div class="logo">
+            <img src="../assets/images/logo.png" alt="TigerSign Logo">
+        </div>
+        <div class="profile" id="profile">
+            <input type="checkbox" id="profile-toggle" style="display: none;">
+            <label for="profile-toggle">
+                <img src="../assets/images/tigersign.png" alt="Profile Picture">
+            </label>
+            <div class="profile-popup" id="profile-popup">
+                <a href="/Admin/profile.html"><i class="bi bi-person-circle"></i> View Profile</a>
+                <a href="/signout"><i class="bi bi-box-arrow-right" style="color: #DB3444;"></i> Sign Out</a>
+            </div>
+        </div>
+    </header>
+    
+    <div class="sidebar">
+        <ul class="menu">
+            <div class="tiger-logo">
+                <img src="../assets/images/tigersign.png" alt="TigerSign Logo">
+            </div>
+            <div class="horizontal-line"></div>
+            <li>
+                <a href="/Admin/dashboard.html" >
+                    <i class="bi bi-grid"></i> 
+                    <span>Dashboard</span>
+                    <span class="tooltip">Dashboard</span>
+                </a>
+            </li>
+            <li class="profile">
+                <a href="/Admin/profile.html">
+                    <i class="bi bi-person-circle"></i>
+                    <span>Profile</span>
+                    <span class="tooltip">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Admin/pending_claim.html">
+                    <i class="bi bi-clock-history"></i> 
+                    <span>Pending Claims</span>
+                    <span class="tooltip">Pending Claims</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Admin/claimed_request.html">
+                    <i class="bi bi-check-circle-fill"></i> 
+                    <span>Claimed Request</span>
+                    <span class="tooltip">Claimed Request</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Admin/evaluation.html" class="active">
+                    <i class="bi bi-star-fill"></i>
+                    <span>Evaluation</span>
+                    <span class="tooltip">Evaluation</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    
+    <div class="main-content">
+        <div class="margin-content">
+            <h1  class="title-page">SEND SURVEY & EVALUATION FORM</h1>
+            <Form>
+                <h3 >Enter Email Address<span style="color: #DB3444;">*</span></h3>
+                <div >
+                    <input type="text" >
+                    <button style="background-color: #1C8454; color: white;">Send</button>
+                </div>
+            </Form>
+        </div>
+        
+    </div>
+    <div class="overlay"></div>
+    
+    <script src="../javascript/sidebar.js"></script>
+</body>
+</html>
