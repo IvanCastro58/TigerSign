@@ -135,6 +135,94 @@ body {
     justify-content: center;
 }
 
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup{
+    background: white;
+    width: 600px;
+    position: relative;
+}
+
+.popup-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    padding: 0 10px;
+}
+
+.popup-header strong{
+    font-size: 14px;
+}
+
+.popup-content{
+    background-color: var(--white);
+    padding: 0px 20px 20px 20px;
+}
+
+.popup-content .bigger-text{
+    color: var(--blackish);
+    font-size: 16px;
+}
+
+.popup-content .info-text .smaller-text{
+    color: var(--blackish);
+    font-size: 12px;
+}
+
+.popup-content .info-text{
+    display: flex;
+    align-items: baseline;
+}
+
+.popup-close {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.bi.bi-info-circle{
+    color: #3B83FB; 
+    font-size: 12px; 
+    margin-right: 5px;
+}
+
+.claimer-button{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 30px 30px 10px 30px;
+}
+
+.claimer-button a{
+    background-color: var(--blackish);
+    color: var(--white);
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    width: max-content;
+    border: none;
+    text-decoration: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.claimer-button a i{
+    font-size: 14px;
+    margin-left: 5px;
+}
+
 @media (max-width: 1230px) {
     .search-input {
         width: 150px; 
@@ -189,6 +277,10 @@ body {
     .search-input {
         width: 150px; 
     }
+
+    .popup{
+        width: 550px;
+    }
 }
 
 @media (max-width: 820px) {
@@ -212,6 +304,37 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .popup{
+        width: 500px;
+    }
+
+    .popup-header strong{
+        font-size: 12px;
+    }
+
+    .popup-close {
+        font-size: 24px;
+    }
+
+    .popup-content .bigger-text{
+        font-size: 14px;
+    }
+
+    .popup-content .info-text .smaller-text{
+        font-size: 10px;
+    }
+
+    .claimer-button a{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .claimer-button a i{
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 650px) {
     .search-input{
         display: none;
@@ -232,6 +355,38 @@ body {
     .nav-item1 .drop-icon i {
         font-size: 15px;
 
+    }
+}
+
+@media (max-width: 525px) {
+    .popup{
+        width: 400px;
+        margin: 0 10px;
+    }
+
+    .popup-header strong{
+        font-size: 10px;
+    }
+
+    .popup-close {
+        font-size: 20px;
+    }
+
+    .popup-content .bigger-text{
+        font-size: 12px;
+    }
+
+    .popup-content .info-text .smaller-text{
+        font-size: 10px;
+    }
+
+    .claimer-button a{
+        font-size: 10px;
+        padding: 10px 15px;
+    }
+
+    .claimer-button a i{
+        font-size: 10px;
     }
 }
 
@@ -275,7 +430,20 @@ body {
         font-size: 12px;
     }
 
+    .claimer-button{
+        margin: 10px;
+    }
+
+    .claimer-button a{
+        padding: 10px;
+    }
+
+    .popup-content{
+        padding: 0 10px 10px 10pxs;
+    }
 }
+
+
 
 
 
