@@ -155,11 +155,13 @@ body {
 .popup-content .bigger-text{
     color: var(--blackish);
     font-size: 16px;
+    text-align: justify;
 }
 
 .popup-content .info-text .smaller-text{
     color: var(--blackish);
     font-size: 12px;
+    text-align: justify;
 }
 
 .popup-content .info-text{
@@ -193,6 +195,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     padding: 15px;
     margin-bottom: 20px;
+    margin-left: 20px;
     border: 1px solid var(--light-gray);
 }
 
@@ -219,12 +222,52 @@ body {
     margin-left: 5px;
 }
 
+@media (max-width: 992px) {
+    .popup{
+        width: 550px;
+    }
+}
+
+
 @media (max-width: 768px) {
     .add-user-btn,
     .add-user-btn i{
         font-size: 12px;
     }
 
+    .popup{
+        width: 500px;
+    }
+
+    .popup-header strong{
+        font-size: 12px;
+    }
+
+    .popup-close {
+        font-size: 24px;
+    }
+
+    .popup-content .bigger-text{
+        font-size: 14px;
+    }
+
+    .popup-content .info-text .smaller-text{
+        font-size: 10px;
+    }
+
+    #add-admin-form input {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .submit-btn {
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+
+    .submit-btn i{
+        font-size: 12px;
+    }
 }
 
 @media (max-width: 525px) {
@@ -239,5 +282,46 @@ body {
 
     .nav-link {
         font-size: 10px;
+    }
+
+    .popup{
+        width: 400px;
+        margin: 0 10px;
+    }
+
+    .popup-header strong{
+        font-size: 10px;
+    }
+
+    .popup-close {
+        font-size: 20px;
+    }
+
+    .popup-content .bigger-text{
+        font-size: 12px;
+    }
+
+    .popup-content .info-text .smaller-text{
+        font-size: 10px;
+    }
+
+    #add-admin-form input {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+    .submit-btn {
+        font-size: 10px;
+        padding: 10px 15px;
+    }
+
+    .submit-btn i{
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 376px) {
+    .submit-btn{
+        margin-right: auto;
     }
 }

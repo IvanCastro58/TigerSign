@@ -1,5 +1,5 @@
-const addButton = document.querySelector('.add-user-btn');
-const popup = document.getElementById('add-admin-popup');
+const addButton = document.querySelector('.action-button');
+const popup = document.getElementById('claimer-type-modal');
 const closeButton = document.getElementById('popup-close');
 
 addButton.addEventListener('click', () => {
@@ -15,5 +15,4 @@ window.addEventListener('click', (event) => {
         popup.style.display = 'none';
     }
 });
-
 
