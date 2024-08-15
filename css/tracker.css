@@ -21,7 +21,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: auto;
     position: relative;
 }
 
@@ -32,8 +32,15 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.7); 
     z-index: -1;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    overflow-y: auto;
 }
 
 header {
@@ -57,27 +64,11 @@ header .logo img {
     height: 40px;
 }
 
-header .logo1 {
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-}
-
-header .logo1 img {
-    width: 50px;
-    height: 40px;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
 .column {
     flex: 1;
     padding: 1px;
     margin: 0 20px;
+    overflow-y: auto;
 }
 
 .left-column {
@@ -86,15 +77,15 @@ header .logo1 img {
 
 .right-column {
     flex-basis: 40%;
-    background-color: var(--primary-color);
     color: var(--blackish);
+    background-color: var(--white);
+    max-height: 80vh;
 }
 
 .heading{
     font-size: 35px;
     font-weight: 700;
     color: var(--white) ;
-    letter-spacing: 4px;
     text-align: center;
 }
 
@@ -105,11 +96,10 @@ header .logo1 img {
 
 .box {
     background-color: var(--white);
-    height: 400px;
+    height: 300px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -117,7 +107,7 @@ header .logo1 img {
 
 .search-container {
     display: flex;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     width: 100%;
 }
 
@@ -126,7 +116,7 @@ header .logo1 img {
     padding: 10px;
     border: 2px solid var(--light-gray);
     border-radius: 4px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .search-button {
@@ -136,13 +126,13 @@ header .logo1 img {
     padding: 10px;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 10px;
 }
 
 .results{
     background-color: var(--green);
-    padding: 20px;
+    padding: 10px;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -150,20 +140,21 @@ header .logo1 img {
 }
 
 .heading-results {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--white);
     text-align: center;
 }
 
 .check-icon {
-    font-size: 80px;
+    font-size: 70px;
     color: var(--white);
     margin-top: 10px;
 }
 
 .info-text {
     display: flex;
+    background-color: var(--primary-color);
     color: var(--blackish);
     font-size: 20px;
     font-weight: 600;
@@ -175,6 +166,33 @@ header .logo1 img {
     margin-right: 10px; 
     color: var(--blackish);
 }
+
+.reminders .heading{
+    color: var(--blackish);
+    margin: 5px 10px;
+    text-align: left;
+}
+
+.reminders .heading span{
+    font-size: 16px;
+    background-color: var(--primary-color);
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.reminders .indented-list .sub-list {
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.reminders .nested-list li {
+    font-size: 14px;
+    margin: 5px;
+}
+
+
+
 
 @media only screen and (min-width: 1025px) and (max-width: 1250px) {
     .registrar-logo img{
@@ -193,11 +211,11 @@ header .logo1 img {
     }
 
     .search-input {
-        font-size: 18px;
+        font-size: 16px;
     }
     
     .search-button {
-        font-size: 18px;
+        font-size: 16px;
     }
 
     .info-text {
@@ -206,6 +224,14 @@ header .logo1 img {
     
     .info-icon {
         font-size: 16px; 
+    }
+    
+    .heading-results {
+        font-size: 16px;
+    }
+
+    .box {   
+        height: 280px;
     }
 
 }
@@ -227,24 +253,19 @@ header .logo1 img {
     }
 
     .search-input {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .search-button {
-        font-size: 16px;
+        font-size: 14px;
     }
 
     .heading-results {
         font-size: 15px;
-        font-weight: 500;
-        color: var(--white);
-        text-align: center;
     }
     
     .check-icon {
         font-size: 60px;
-        color: var(--white);
-        margin-top: 10px;
     }
 
     .info-text {
@@ -254,19 +275,44 @@ header .logo1 img {
     .info-icon {
         font-size: 14px; 
     }
-}
 
-@media only screen and (min-width: 769px) and (max-width: 870px) {
-    .container{
-        justify-content: center;
+    .box {   
+        height: 260px;
     }
 
-    .registrar-logo img{
-        display: none;
+    .reminders .heading span{
+        font-size: 14px;
+    }
+    .reminders .indented-list .sub-list {
+        font-size: 13px;
+    }
+    .reminders .nested-list li {
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 871px) {
+    body {
+        overflow: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .box {   
+        height: 240px;
     }
 
     .heading{
-        font-size: 20px;
+        font-size: 30px;
         font-weight: 700;
     }
 
@@ -315,81 +361,13 @@ header .logo1 img {
         align-items: center;
     }
 
-    .registrar-logo img {
-        display: none;
-    }
-
     .column {
         width: 100%;
         margin: 10px 0;
     }
 
-    .heading {
-        font-size: 25px;
-        font-weight: 700;
-    }
-
-    .highlight-bar {
-        height: 2px;
-    }
-
-    .search-input {
-        font-size: 18px;
-    }
-    
-    .search-button {
-        font-size: 18px;
-    }
-
-    .heading-results {
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--white);
-        text-align: center;
-    }
-    
-    .check-icon {
-        font-size: 60px;
-        color: var(--white);
-        margin-top: 10px;
-    }
-
-    .info-text {
-        font-size: 14px;
-    }
-    
-    .info-icon {
-        font-size: 14px; 
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    body{
-        background-image: none;
-        background-color: var(--light-gray);
-        overflow: auto;
-    }
-
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .registrar-logo img{
-        display: none;
-    }
-
-    .registrar-logo1 img{
-        display: block;
-        text-align: center;
-        width: 250px;
-        height: 40px;
-        margin-bottom: 20px;
-    }
-
-    .column {
-        width: 100%;
-        margin: 10px 0;
+    .box {   
+        height: 220px;
     }
 
     .heading {
@@ -429,5 +407,164 @@ header .logo1 img {
     .info-icon {
         font-size: 14px; 
     }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 480px) {
+    body{
+        background-image: none;
+        background-color: var(--light-gray);
+        overflow: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    header .logo {
+        margin-left: 30px;
+    }
+
+    .box {   
+        height: 210px;
+    }
+
+    .heading {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .highlight-bar {
+        height: 2px;
+    }
+
+    .search-input {
+        font-size: 12px;
+    }
+    
+    .search-button {
+        font-size: 12px;
+    }
+
+    .heading-results {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--white);
+        text-align: center;
+    }
+    
+    .check-icon {
+        font-size: 60px;
+        color: var(--white);
+        margin-top: 10px;
+    }
+
+    .info-text {
+        font-size: 14px;
+    }
+    
+    .info-icon {
+        font-size: 14px; 
+    }
+
+    .reminders .heading span{
+        font-size: 13px;
+    }
+    .reminders .indented-list .sub-list {
+        font-size: 12px;
+    }
+    .reminders .nested-list li {
+        font-size: 11px;
+    }
+
+}
+
+@media only screen and (max-width: 374px) {
+    body{
+        background-image: none;
+        background-color: var(--light-gray);
+        overflow: auto;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .column {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    header .logo {
+        margin-left: 20px;
+    }
+    
+    header .logo img {
+        width: 250px;
+        height: 40px;
+    }
+
+    .box {   
+        height: 210px;
+    }
+
+    .heading {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .highlight-bar {
+        height: 2px;
+    }
+
+    .search-container {
+        margin-bottom: 20px;
+    }
+
+    .search-input {
+        font-size: 12px;
+    }
+    
+    .search-button {
+        font-size: 12px;
+    }
+
+    .heading-results {
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--white);
+        text-align: center;
+    }
+    
+    .check-icon {
+        font-size: 50px;
+        color: var(--white);
+        margin-top: 10px;
+    }
+
+    .info-text {
+        font-size: 14px;
+    }
+    
+    .info-icon {
+        font-size: 14px; 
+    }
+
+    .reminders .heading span{
+        font-size: 13px;
+    }
+    .reminders .indented-list .sub-list {
+        font-size: 12px;
+    }
+    .reminders .nested-list li {
+        font-size: 11px;
+    }
+
 
 }
