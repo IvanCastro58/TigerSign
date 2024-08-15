@@ -165,7 +165,7 @@ body {
     flex: 1;
 }
 
-.proof-btn{
+.proof-btn {
     width: 220px;
     background-color: var(--primary-color);
     font-size: 15px;
@@ -174,6 +174,12 @@ body {
     margin-bottom: 20px;
     border: none;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: box-shadow 0.3s ease;
+}
+
+.proof-btn:hover {
+    box-shadow: none; /* Removes shadow on hover */
 }
 
 .bottom-buttons {
@@ -192,6 +198,12 @@ body {
     border: none;
     cursor: pointer;
     color: var(--white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: box-shadow 0.3s ease;
+}
+
+.proof-btn2:hover {
+    box-shadow: none; 
 }
 
 @media (max-width: 720px) {
