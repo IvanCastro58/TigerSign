@@ -36,11 +36,37 @@ body {
     overflow-x: auto;
 }
 
+.scrollable-table {
+    width: 100%; /* Adjust this value based on your design */
+    overflow-y: auto;
+    max-height: 281px;
+}
+
+.scrollable-table::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-table::-webkit-scrollbar-thumb {
+    background-color: var(--light-gray);
+    border-radius: 4px;
+}
+
+.scrollable-table::-webkit-scrollbar-track {
+    background: var(--white);
+}
+
 .table-wrapper::-webkit-scrollbar {
     display: none;
 }
 
 .transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-left: 1px solid var(--light-gray);
+    border-right: 1px solid var(--light-gray);
+}
+
+#pending-request {
     width: 100%;
     border-collapse: collapse;
     border-left: 1px solid var(--light-gray);
@@ -53,13 +79,28 @@ body {
     text-align: center;
 }
 
+#pending-request th, #pending-request td {
+    border-bottom: 1px solid var(--light-gray);
+    padding: 15px;
+    text-align: center;
+}
+
 .transaction-table th {
     background-color: var(--blackish);
     color: var(--white);
     position: relative;
     text-align: center;
     font-size: 14px;
-    height: 30px;
+    height: 20px;
+}
+
+#pending-request th {
+    background-color: var(--blackish);
+    color: var(--white);
+    position: relative;
+    text-align: center;
+    font-size: 14px;
+    height: 20px;
 }
 
 .transaction-table tr {
@@ -93,6 +134,36 @@ body {
     background-color: #f0f0f0; 
 }
 
+#pending-request tr {
+    position: relative;
+    background-color: var(--white);
+    text-align: center;
+    font-size: 12px;
+    height: 20px;
+    cursor: pointer;
+    overflow: hidden; 
+}
+
+#pending-request tr::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px; 
+    height: 100%;
+    background-color: var(--primary-color); 
+    transform: scaleY(0); 
+    transform-origin: center; 
+    transition: transform 0.3s ease; 
+}
+
+#pending-request tr:hover::before {
+    transform: scaleY(1); 
+}
+
+#pending-request tr:hover {
+    background-color: #f0f0f0; 
+}
 
 .profile-column img{
     width: 40px;
@@ -249,6 +320,10 @@ body {
         font-size: 14px;
     }
 
+    #pending-request th, #pending-request td {
+        font-size: 14px;
+    }
+
     .status-dropdown {
         font-size: 14px;
     }
@@ -258,8 +333,18 @@ body {
     }
 }
 
+@media (max-width: 1215px) {
+    #pending-request th, #pending-request td {
+        font-size: 13px;
+    }
+}
+
 @media (max-width: 1150px) {
     .transaction-table th, .transaction-table td {
+        font-size: 12px;
+    }
+
+    #pending-request th, #pending-request td {
         font-size: 12px;
     }
 
