@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 :root {
     --primary-color: #F4BB00;
     --secondary-color: #5D4600;
@@ -9,6 +10,8 @@
     --blue: #3B83FB;
     --white: #ffffff;
     --green: #1C8454;
+    --lighter-gray: #f4f4f4;
+    --red: #d9534f;
 }
 
 body {
@@ -84,36 +87,44 @@ header .logo img {
 .form-container{
     background-color: var(--white);
     border: 1px solid var(--blackish);
+    padding: 0 20px;
+}
+
+.form-box{
+    border: 1px solid var(--blackish);
+    margin: 10px 20px;
+    padding: 0 20px;
 }
 
 .title-form{
     text-align: center;
-    margin: 40px 20px 20px 20px;
-    font-size: 30px;
+    font-size: 28px;
+    font-weight: 800;
 }
 
 .reminders{
     display: flex;
     margin: 20px;
-    align-items: center;
+    align-items: first baseline;
     padding-bottom: 20px;
 }
 
 .reminders i{
-    padding-right: 10px;
+    margin-right: 10px;
     color: var(--blue);
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .smaller-text{
-    font-size: 18px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .number-form {
     margin: 20px 20px 30px 20px;
     letter-spacing: 1px;
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .number-form span{
@@ -131,23 +142,25 @@ header .logo img {
 }
 
 .form-label {
-    font-size: 25px;
+    font-size: 16px;
     margin-bottom: 10px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 input[type="text"],
 input[type="date"] {
+    font-family: 'Montserrat', sans-serif;
     width: 100%;
     max-width: 100%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 14px;
+    margin-bottom: 20px;
     border: 1px solid var(--blackish);
     box-sizing: border-box; 
 }
 
 .documents-list{
-    font-size: 20px;
+    font-size: 14px;
 }
 
 .input-with-button {
@@ -157,12 +170,41 @@ input[type="date"] {
 }
 
 .input-with-button input {
+    font-family: 'Montserrat', sans-serif;
     flex: 1;
     padding: 10px;
     font-size: 16px;
+    margin-top: 20px;
     border: 1px solid var(--blackish);
     border-right: none; 
     box-sizing: border-box;
+}
+
+#field-email:focus,
+#field-name:focus,
+#field-date:focus{
+    outline: none;
+    border-radius: 5px;
+    border: 2px solid var(--blue);
+}
+
+#signature-field:focus,
+#photo-field:focus,
+#photo-filename:focus{
+    outline: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: 2px solid var(--blue);
+}
+
+.input-with-button input::placeholder{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+#photo-filename,
+#signature-field{
+    cursor: pointer;
 }
 
 .upload-btn {
@@ -172,7 +214,7 @@ input[type="date"] {
     background-color: var(--primary-color);
     color: var(--white);
     font-size: 16px;
-    cursor: pointer;
+    cursor: pointer;    
     transition: background-color 0.3s ease;
 }
 
@@ -186,6 +228,8 @@ input[type="date"] {
 }
 
 .submit-btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     padding: 10px 30px;
     font-size: 18px;
     background-color: var(--green);
@@ -195,9 +239,195 @@ input[type="date"] {
     transition: background-color 0.3s ease;
 }
 
-.submit-btn:hover {
-    background-color: var(--secondary-color);
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
 }
+
+.modal-content {
+    background-color: var(--white);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    position: absolute; /* Changed from relative to absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the content */
+}
+
+.popup-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    background-color: var(--primary-color);
+}
+
+.popup-header strong{
+    font-size: 14px;
+}
+
+.close-modal-btn  {
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-content{
+    background-color: var(--white);
+    padding: 0px 20px 20px 20px;
+}
+
+.popup-content canvas{
+    margin: 20px 0;
+    border: 2px solid var(--blackish);
+}
+
+.popup-message{
+    margin-top: 20px;
+    text-align: justify;
+}
+
+.info-text{
+    display: flex;
+    align-items: first baseline;
+}
+
+.info-text i{
+    color: #3B83FB; 
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.info-text p{
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+video {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.captured-image-container {
+    display: none;
+    margin: 20px 0;
+}
+
+.capture-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 18px 20px;
+    border-radius: 50%;
+    margin-top: 20px;
+    border: none;
+    box-shadow:
+        0 0 0 2px var(--white),
+        0 0 0 4px var(--primary-color),
+        0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.capture-btn:active {
+    transform: scale(0.95);
+    box-shadow:
+        0 0 0 2px var(--white),
+        0 0 0 4px var(--primary-color),
+        0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.capture-btn{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.captured-image-preview {
+    width: 100%;
+}
+
+#photo-controls {
+    margin-top: 10px;
+}
+
+#photo-field {
+    display: none;
+}
+
+.image-viewer {
+    cursor: pointer;
+    color: #007bff;
+    text-decoration: underline;
+}
+
+#view-image-modal img {
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.signature-buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.signature-buttons button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.signature-buttons .sign-btn,
+.signature-buttons .confirm-btn {
+    color: var(--green);
+}
+
+.signature-buttons .retake-btn {
+    color: var(--red);
+}
+
+.signature-buttons .sign-btn:hover,
+.signature-buttons .confirm-btn:hover {
+    background-color: #e8f5e9;
+    color: var(--green);
+}
+
+.signature-buttons .retake-btn:hover {
+    background-color: #f8d7da;
+    color: var(--red);
+}
+
+.signature-buttons i {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.signature-buttons .button-text {
+    font-size: 14px;
+}
+
+.signature-buttons button:focus {
+    outline: 2px solid var(--blue);
+}
+
+.success-border {
+    border: 2px solid green;
+}
+
 
 @media (max-width: 768px) {
     .highlight-bar {

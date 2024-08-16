@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      text-align: center;
+    }
+    .message {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .loading {
+      font-size: 24px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="message">You are about to be transferred to a new page.</div>
+    <div class="loading">Loading...</div>
+  </div>
+  <script>
+    // Get the target URL from the query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetUrl = urlParams.get('redirect') || '/'; // Default to home if no parameter
+
+    // Redirect to the target URL after a short delay
+    setTimeout(function() {
+      window.location.href = targetUrl;
+    }, 1000); // Adjust delay as needed
+  </script>
+</body>
+</html>
