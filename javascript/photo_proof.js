@@ -14,7 +14,8 @@ const viewImageModal = document.getElementById('view-image-modal');
 const viewImage = document.getElementById('view-image');
 const closeViewImageModalBtn = document.getElementById('close-view-image-modal-btn');
 let stream;
-let capturedDataUrl;
+let capturedDataUrl = null;
+let confirmedDataUrl = null; // Store confirmed image URL
 
 openCameraBtn.addEventListener('click', async () => {
     captureModal.style.display = 'flex';
@@ -51,22 +52,29 @@ captureBtn.addEventListener('click', () => {
 retakeBtn.addEventListener('click', () => {
     photoControlsModal.style.display = 'none';
     captureModal.style.display = 'flex';
+    capturedDataUrl = null;
 });
 
 confirmBtn.addEventListener('click', () => {
-    photoField.files = new DataTransfer().files; // Reset file input
-    const blob = dataURLToBlob(capturedDataUrl);
-    const file = new File([blob], "photo.png", { type: 'image/png' });
-    const dataTransfer = new DataTransfer();
-    dataTransfer.items.add(file);
-    photoField.files = dataTransfer.files;
-    photoFilename.value = "photo.png"; // Display file name
-    photoControlsModal.style.display = 'none'; // Close the photo controls modal
+    if (capturedDataUrl) {
+        const blob = dataURLToBlob(capturedDataUrl);
+        const file = new File([blob], "photo.png", { type: 'image/png' });
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        photoField.files = dataTransfer.files;
+        photoFilename.value = "photo.png";
+        confirmedDataUrl = capturedDataUrl; 
+        capturedImageContainer.style.display = 'block';
+        photoControlsModal.style.display = 'none';
+
+        photoFilename.classList.add('success');
+        document.getElementById('photo-check-icon').style.display = 'block';
+    }
 });
 
 function viewCapturedImage() {
-    if (capturedDataUrl) {
-        viewImage.src = capturedDataUrl;
+    if (confirmedDataUrl) {
+        viewImage.src = confirmedDataUrl;
         viewImageModal.style.display = 'flex';
     }
 }

@@ -173,7 +173,7 @@ input[type="date"] {
     font-family: 'Montserrat', sans-serif;
     flex: 1;
     padding: 10px;
-    font-size: 16px;
+    font-size: 14px;
     margin-top: 20px;
     border: 1px solid var(--blackish);
     border-right: none; 
@@ -197,11 +197,6 @@ input[type="date"] {
     border: 2px solid var(--blue);
 }
 
-.input-with-button input::placeholder{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-}
-
 #photo-filename,
 #signature-field{
     cursor: pointer;
@@ -213,7 +208,7 @@ input[type="date"] {
     border-left: none;
     background-color: var(--primary-color);
     color: var(--white);
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;    
     transition: background-color 0.3s ease;
 }
@@ -285,10 +280,14 @@ input[type="date"] {
     padding: 0px 20px 20px 20px;
 }
 
-.popup-content canvas{
+.popup-content canvas {
     margin: 20px 0;
     border: 2px solid var(--blackish);
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 
 .popup-message{
     margin-top: 20px;
@@ -314,6 +313,10 @@ input[type="date"] {
 
 video {
     width: 100%;
+    height: auto;
+    border: 2px solid var(--blackish);
+    border-radius: 8px;
+    background-color: #000;
     margin-top: 20px;
 }
 
@@ -325,29 +328,20 @@ video {
 .capture-btn {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 18px 20px;
+    padding: 16px;
     border-radius: 50%;
-    margin-top: 20px;
     border: none;
-    box-shadow:
-        0 0 0 2px var(--white),
-        0 0 0 4px var(--primary-color),
-        0 4px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--primary-color), 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.2s ease;
     cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 30px;
 }
 
 .capture-btn:active {
     transform: scale(0.95);
-    box-shadow:
-        0 0 0 2px var(--white),
-        0 0 0 4px var(--primary-color),
-        0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.capture-btn{
-    font-size: 20px;
-    font-weight: 600;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--primary-color), 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .captured-image-preview {
@@ -424,10 +418,30 @@ video {
     outline: 2px solid var(--blue);
 }
 
-.success-border {
-    border: 2px solid green;
+.input-with-button input.success {
+    font-size: 14px;
+    padding-right: 40px;
+    border: 2px solid #28a745;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
+.success-icon {
+  color: #28a745;
+  display: none;
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-with-button {
+  position: relative;
+}
+
+.success input[type="text"] + .success-icon {
+  display: block;
+}
 
 @media (max-width: 768px) {
     .highlight-bar {
@@ -598,6 +612,12 @@ video {
         padding-bottom: 0;
         margin: 5px 20px;
         font-size: 8px;
+    }
+
+    
+
+    .input-with-button input.success {
+        font-size: 10px;
     }
 
     .reminders i{

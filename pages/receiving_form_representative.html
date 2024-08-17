@@ -58,30 +58,33 @@
                             <div class="input-fields">
                                 <label for="claimer-letter" class="form-label">Authorization Letter:</label>
                                 <div class="input-with-button">
-                                    <input type="text" name="field-signature" placeholder="Upload Signature">
+                                    <input type="text" name="field-letter" placeholder="Upload Authorization Letter">
                                     <button type="button" class="upload-btn"><i class="fa-solid fa-camera"></i></button>
                                 </div>
                             </div>
                             <div class="input-fields">
                                 <label for="claimer-id" class="form-label">ID Photo:</label>
                                 <div class="input-with-button">
-                                    <input type="text" name="field-signature" placeholder="Upload Signature">
+                                    <input type="text" name="field-id" placeholder="Upload Owner's ID">
                                     <button type="button" class="upload-btn"><i class="fa-solid fa-camera"></i></button>
                                 </div>
                             </div>
                             <div class="input-fields">
                                 <label for="claimer-signature" class="form-label">E-Signature:</label>
                                 <div class="input-with-button">
-                                    <input type="text" name="field-signature" id="signature-field" placeholder="Upload Signature" readonly>
-                                    <button type="button" class="upload-btn" id="open-signature-modal-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                                </div>
+                                  <input type="text" name="field-signature" id="signature-field" placeholder="Upload Signature" readonly>
+                                  <button type="button" class="upload-btn" id="open-signature-modal-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                  <i class="fas fa-check-circle success-icon" id="signature-check-icon"></i>
+                                </div>                                
                             </div>
+                            
                             <div class="input-fields">
                                 <label for="claimer-photo" class="form-label">Self-Captured Photo</label>
                                 <div class="input-with-button">
                                     <input type="file" name="field-photo" id="photo-field" accept="image/*">
                                     <input type="text" id="photo-filename" placeholder="Upload Photo" readonly onclick="viewCapturedImage()">
                                     <button type="button" class="upload-btn" id="open-camera-btn"><i class="fa-solid fa-camera"></i></button>
+                                    <i class="fas fa-check-circle success-icon" id="photo-check-icon"></i>
                                 </div>
                             </div>
                             
@@ -171,7 +174,7 @@
                                                 <i class="fa-solid fa-check"></i>
                                                 <span class="button-text">Confirm Signature</span>
                                             </button>
-                                            <button type="button" class="retake-btn" id="retake-signature-btn" title="Retake Signature">
+                                            <button type="button" class="retake-btn" id="retake-sig-btn" title="Retake Signature">
                                                 <i class="fa fa-arrow-rotate-left"></i>
                                                 <span class="button-text">Retake Signature</span>
                                             </button>

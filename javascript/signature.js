@@ -11,11 +11,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const signaturePreviewImg = document.getElementById('signature-preview');
     const closeSignatureControlsModalBtn = document.getElementById('close-signature-controls-modal-btn');
     const confirmSignatureBtn = document.getElementById('confirm-signature-btn');
-    const retakeSignatureControlsBtn = document.getElementById('retake-signature-btn');
+    const retakeSignatureControlsBtn = document.getElementById('retake-sig-btn');
     const viewSignatureModal = document.getElementById('view-signature-modal');
     const viewSignatureImg = document.getElementById('view-signature');
     const closeViewSignatureModalBtn = document.getElementById('close-view-signature-modal-btn');
+    
     let drawing = false;
+    let newSignatureData = null; // Store the new signature data for confirmation
 
     function resetSignaturePad() {
         signatureCtx.clearRect(0, 0, signatureCanvas.width, signatureCanvas.height);
@@ -42,15 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     signatureCanvas.addEventListener('mousemove', handleDrawing);
-
-    signatureCanvas.addEventListener('mouseup', () => {
-        drawing = false;
-    });
-
-    signatureCanvas.addEventListener('mouseleave', () => {
-        drawing = false;
-    });
-
+    signatureCanvas.addEventListener('mouseup', () => (drawing = false));
+    signatureCanvas.addEventListener('mouseleave', () => (drawing = false));
+    
     signatureCanvas.addEventListener('touchstart', (e) => {
         e.preventDefault();
         drawing = true;
@@ -62,18 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     signatureCanvas.addEventListener('touchmove', handleDrawing);
-
-    signatureCanvas.addEventListener('touchend', () => {
-        drawing = false;
-    });
-
-    signatureCanvas.addEventListener('touchcancel', () => {
-        drawing = false;
-    });
+    signatureCanvas.addEventListener('touchend', () => (drawing = false));
+    signatureCanvas.addEventListener('touchcancel', () => (drawing = false));
 
     openSignatureModalBtn.addEventListener('click', () => {
         signatureModal.style.display = 'block';
         resetSignaturePad();
+        newSignatureData = null; // Clear new signature data
     });
 
     closeSignatureModalBtn.addEventListener('click', () => {
@@ -81,9 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     saveSignatureBtn.addEventListener('click', () => {
-        const signatureData = signatureCanvas.toDataURL('image/png'); 
-        signatureField.value = 'Signature Uploaded'; 
-    
+        const signatureData = signatureCanvas.toDataURL('image/png');
+        newSignatureData = signatureData;
         signaturePreviewImg.src = signatureData;
         signatureControlsModal.style.display = 'block';
         signatureModal.style.display = 'none';
@@ -98,8 +88,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     confirmSignatureBtn.addEventListener('click', () => {
+        signatureField.value = 'Signature Uploaded';
+        signatureField.dataset.signature = newSignatureData;
         signatureControlsModal.style.display = 'none';
-    });
+        
+        signatureField.classList.add('success');
+        document.getElementById('signature-check-icon').style.display = 'block';
+    }); 
 
     retakeSignatureControlsBtn.addEventListener('click', () => {
         signatureModal.style.display = 'block';
@@ -107,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     signatureField.addEventListener('click', () => {
-        if (signatureField.value === 'Signature Uploaded') {
-            viewSignatureImg.src = signaturePreviewImg.src;
+        if (signatureField.dataset.signature) {
+            viewSignatureImg.src = signatureField.dataset.signature;
             viewSignatureModal.style.display = 'block';
         }
     });
