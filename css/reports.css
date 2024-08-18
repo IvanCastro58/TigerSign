@@ -26,6 +26,12 @@
     align-items: center; 
 }
 
+.generate-buttons {
+    margin: 20px 0;
+    align-items: center; 
+}
+
+
 .status-btn,
 .survey-btn {
     margin-right: 20px; 
@@ -50,6 +56,27 @@
 }
 
 .reports-btn:hover {
+    box-shadow: none;
+    background-color: var(--white);
+    color: var(--blackish);
+    border: 1px solid var(--blackish);
+}
+
+.gen-btn{
+    width: 220px;
+    background-color: var(--green);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 5px;
+    border: none;
+    margin-right: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: box-shadow 0.3s ease;
+}
+
+.gen-btn:hover {
     box-shadow: none;
     background-color: var(--white);
     color: var(--blackish);
@@ -112,6 +139,13 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     border: 5px solid var(--green);
     margin: 0 auto; 
+}
+
+.comments-section{
+    grid-column: span 2; 
+    background-color: var(--lighter-gray);
+    padding: 10px;
+    border: 1px solid var(--blackish);
 }
 
 @media (max-width: 1445px) {
