@@ -298,21 +298,24 @@
     }
     
     .latest-reports {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
+        display: flex;
+        flex-direction: column; 
     }
 
     .report-column {
         width: 100%;
     }
 
-    .report-column.left {
-        order: 1; 
+    .comments-section {
+        margin-top: 20px; 
+        background-color: var(--lighter-gray);
+        padding: 10px;
+        border: 1px solid var(--blackish);
+        order: 3; 
     }
 
-    .report-column.right {
-        order: 2;
+    .report-column.left, .report-column.right {
+        order: 1; 
     }
 
     #overall-score .card-heading {
