@@ -180,7 +180,7 @@ body {
 }
 
 .proof-btn:hover {
-    box-shadow: none; /* Removes shadow on hover */
+    box-shadow: none;
 }
 
 .bottom-buttons {

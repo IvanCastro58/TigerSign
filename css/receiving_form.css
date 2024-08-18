@@ -521,6 +521,14 @@ video {
         font-size: 20px;
     }
 
+    .margin-content {
+        padding: 10px 10px;
+    }
+
+    .form-container{
+        padding: 0 10px;
+    }
+
     .title-form{
         font-size: 20px;
         margin: 10px;
@@ -556,6 +564,14 @@ video {
     
     .form-label {
         font-size: 16px;
+    }
+
+    .reminders i{
+        font-size: 12px;
+    }
+    
+    .smaller-text{
+        font-size: 12px;
     }
     
     input[type="text"],
@@ -614,18 +630,16 @@ video {
         font-size: 8px;
     }
 
-    
-
     .input-with-button input.success {
         font-size: 10px;
     }
 
     .reminders i{
-        font-size: 12px;
+        font-size: 11px;
     }
     
     .smaller-text{
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .number-form {
@@ -681,6 +695,11 @@ video {
         border-bottom: 3px solid var(--primary-color);
     }
 
+    .form-container{
+        padding: 0 5px;
+    }
+    
+
     .title-form{
         font-size: 16px;
         margin: 5px;
@@ -693,11 +712,11 @@ video {
     }
 
     .reminders i{
-        font-size: 10px;
+        font-size: 9px;
     }
     
     .smaller-text{
-        font-size: 10px;
+        font-size: 9px;
     }
 
     .number-form {
