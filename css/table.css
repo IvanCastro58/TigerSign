@@ -66,7 +66,7 @@ body {
     border-right: 1px solid var(--light-gray);
 }
 
-#pending-request {
+#reports-dashboard {
     width: 100%;
     border-collapse: collapse;
     border-left: 1px solid var(--light-gray);
@@ -79,7 +79,7 @@ body {
     text-align: center;
 }
 
-#pending-request th, #pending-request td {
+#reports-dashboard th, #reports-dashboard td {
     border-bottom: 1px solid var(--light-gray);
     padding: 15px;
     text-align: center;
@@ -94,7 +94,7 @@ body {
     height: 20px;
 }
 
-#pending-request th {
+#reports-dashboard th {
     background-color: var(--blackish);
     color: var(--white);
     position: relative;
@@ -134,7 +134,7 @@ body {
     background-color: #f0f0f0; 
 }
 
-#pending-request tr {
+#reports-dashboard tr {
     position: relative;
     background-color: var(--white);
     text-align: center;
@@ -144,7 +144,7 @@ body {
     overflow: hidden; 
 }
 
-#pending-request tr::before {
+#reports-dashboard tr::before {
     content: '';
     position: absolute;
     left: 0;
@@ -157,11 +157,11 @@ body {
     transition: transform 0.3s ease; 
 }
 
-#pending-request tr:hover::before {
+#reports-dashboard tr:hover::before {
     transform: scaleY(1); 
 }
 
-#pending-request tr:hover {
+#reports-dashboard tr:hover {
     background-color: #f0f0f0; 
 }
 
@@ -320,7 +320,7 @@ body {
         font-size: 14px;
     }
 
-    #pending-request th, #pending-request td {
+    #reports-dashboard th, #reports-dashboard td {
         font-size: 14px;
     }
 
@@ -334,7 +334,7 @@ body {
 }
 
 @media (max-width: 1215px) {
-    #pending-request th, #pending-request td {
+    #reports-dashboard th, #reports-dashboard td {
         font-size: 13px;
     }
 }
@@ -344,7 +344,7 @@ body {
         font-size: 12px;
     }
 
-    #pending-request th, #pending-request td {
+    #reports-dashboard th, #reports-dashboard td {
         font-size: 12px;
     }
 
