@@ -1,19 +1,17 @@
-const addButton = document.querySelector('.add-user-btn');
-const popup = document.getElementById('add-admin-popup');
-const closeButton = document.getElementById('popup-close');
+const addAdmin = document.querySelector('.add-user-btn');
+const adminPopup = document.getElementById('add-admin-popup');
+const closeAddAdmin = document.getElementById('popup-close');
 
-addButton.addEventListener('click', () => {
-    popup.style.display = 'flex';
+addAdmin.addEventListener('click', () => {
+    adminPopup.style.display = 'flex';
 });
 
-closeButton.addEventListener('click', () => {
-    popup.style.display = 'none';
+closeAddAdmin.addEventListener('click', () => {
+    adminPopup.style.display = 'none';
 });
 
 window.addEventListener('click', (event) => {
     if (event.target === popup) {
-        popup.style.display = 'none';
+        adminPopup.style.display = 'none';
     }
 });
-
-

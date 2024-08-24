@@ -87,7 +87,7 @@ header .logo img {
 .form-container{
     background-color: var(--white);
     border: 1px solid var(--blackish);
-    padding: 0 20px;
+    padding: 0 20px 20px 20px;
 }
 
 .form-box{
@@ -225,13 +225,14 @@ input[type="date"] {
 .submit-btn {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    padding: 10px 30px;
+    padding: 10px 20px;
     font-size: 18px;
     background-color: var(--green);
     color: var(--white);
-    border: 1px solid var(--blackish);
+    border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .modal {
@@ -282,6 +283,8 @@ input[type="date"] {
 
 .popup-content canvas {
     margin: 20px 0;
+    width: 500px;
+    height: 200px;
     border: 2px solid var(--blackish);
     border-radius: 5px;
     background-color: #f8f8f8;
@@ -291,6 +294,7 @@ input[type="date"] {
 
 .popup-message{
     margin-top: 20px;
+    font-size: 14px;
     text-align: justify;
 }
 
@@ -381,7 +385,6 @@ video {
     border: 1px solid var(--light-gray);
     cursor: pointer;
     padding: 10px 20px;
-    font-size: 14px;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
@@ -455,11 +458,11 @@ video {
     }
 
     .main-content .margin-content .title-page{
-        font-size: 25px;
+        font-size: 24px;
     }
 
     .title-form{
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .reminders{
@@ -467,19 +470,19 @@ video {
     }
 
     .reminders i{
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .smaller-text{
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .number-form {
-        font-size: 20px;
+        font-size: 18px;
     }
     
     .form-label {
-        font-size: 20px;
+        font-size: 14px;
     }
     
     input[type="text"],
@@ -487,58 +490,79 @@ video {
         width: 100%;
         max-width: 100%;
         padding: 10px;
-        font-size: 14px;
+        font-size: 12px;
         border: 1px solid var(--blackish);
         box-sizing: border-box; 
     }
     
     .documents-list{
-        font-size: 14px;
+        font-size: 12px;
     }
 
     .input-with-button input {
         flex: 1;
         padding: 10px;
-        font-size: 14px;
+        font-size: 12px;
         border: 1px solid var(--blackish);
         border-right: none; 
         box-sizing: border-box;
     }
     
     .upload-btn {
-        font-size: 14px;
+        font-size: 13px;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
 
     .submit-btn {
-        font-size: 16px;
+        font-size: 12px;
     }
 }
 
-@media (max-width: 551px) {
+@media (max-width: 625px) {
     .main-content .margin-content .title-page{
         font-size: 20px;
     }
 
     .title-form{
-        font-size: 20px;
+        font-size: 18px;
         margin: 10px;
     }
 
     .reminders{
         padding-bottom: 1px;
         margin: 10px 20px;
-        }
     }
+
+    .number-form {
+        font-size: 14px;
+    }
+
+    .reminders i{
+        font-size: 10px;
+    }
+    
+    .smaller-text{
+        font-size: 10px;
+    }
+}  
 
 @media (max-width: 525px) {
-    html{
-        font-size: 65%;
-    }
-
     .margin-content {
         padding: 5px 10px;
+    }
+
+    .form-container{
+        padding: 0;
+        padding-bottom: 10px;
+    }
+
+    .form-box{
+        padding: 0;
+    }
+
+    .form-label {
+        font-size: 12px;
     }
 
     header .logo img {
@@ -550,14 +574,6 @@ video {
         font-size: 12px;
     }
 
-    .number-form {
-        font-size: 16px;
-    }
-    
-    .form-label {
-        font-size: 16px;
-    }
-    
     input[type="text"],
     input[type="date"] {
         width: 100%;
@@ -591,6 +607,30 @@ video {
         font-size: 16px;
         padding: 8px 18px;
     }
+
+    .popup-content canvas {
+        width: 450px;
+    }
+
+    .modal-content {
+        max-width: 500px;
+    }
+
+    .signature-buttons i {
+        font-size: 12px;
+    }
+    
+    .signature-buttons .button-text {
+        font-size: 12px;
+    }
+    
+    .popup-header strong{
+        font-size: 12px;
+    }
+    
+    .close-modal-btn  {
+        font-size: 28px;
+    }
 }
 
 @media (max-width: 465px) {
@@ -614,18 +654,8 @@ video {
         font-size: 8px;
     }
 
-    
-
     .input-with-button input.success {
         font-size: 10px;
-    }
-
-    .reminders i{
-        font-size: 12px;
-    }
-    
-    .smaller-text{
-        font-size: 12px;
     }
 
     .number-form {
@@ -668,6 +698,15 @@ video {
     .submit-btn {
         font-size: 14px;
         padding: 6px 16px;
+    }
+
+    .popup-content canvas {
+        width: 350px;
+        height: 150px;
+    }
+
+    .modal-content {
+        max-width: 450px;
     }
 }
 
@@ -741,6 +780,15 @@ video {
         font-size: 14px;
         padding: 6px 16px;
     }
+
+    .popup-content canvas {
+        width: 300px;
+        height: 150px;
+    }
+
+    .modal-content {
+        max-width: 400px;
+    }
 }
 
 @media (max-width: 340px) {
@@ -805,12 +853,18 @@ video {
     
     .upload-btn {
         font-size: 10px;
+        padding: 10px 15px;
         cursor: pointer;
         transition: background-color 0.3s ease;
     }
 
     .submit-btn {
-        font-size: 14px;
+        font-size: 12px;
         padding: 6px 16px;
+    }
+
+    .popup-content canvas {
+        width: 250px;
+        height: 120px;
     }
 }
