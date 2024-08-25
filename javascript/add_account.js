@@ -4,14 +4,23 @@ const closeAddAdmin = document.getElementById('popup-close');
 
 addAdmin.addEventListener('click', () => {
     adminPopup.style.display = 'flex';
+    setTimeout(() => {
+        adminPopup.querySelector('.popup').classList.add('show');
+    }, 10);
 });
 
 closeAddAdmin.addEventListener('click', () => {
-    adminPopup.style.display = 'none';
+    adminPopup.querySelector('.popup').classList.remove('show');
+    setTimeout(() => {
+        adminPopup.style.display = 'none';
+    }, 600);
 });
 
 window.addEventListener('click', (event) => {
-    if (event.target === popup) {
-        adminPopup.style.display = 'none';
+    if (event.target === adminPopup) {
+        adminPopup.querySelector('.popup').classList.remove('show');
+        setTimeout(() => {
+            adminPopup.style.display = 'none';
+        }, 600);
     }
 });

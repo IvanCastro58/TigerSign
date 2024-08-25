@@ -4,15 +4,23 @@ const closeButton = document.getElementById('popup-close');
 
 claimerModal.addEventListener('click', () => {
     claimerPopup.style.display = 'flex';
+    setTimeout(() => {
+        claimerPopup.querySelector('.popup').classList.add('show');
+    }, 10);
 });
 
 closeButton.addEventListener('click', () => {
-    claimerPopup.style.display = 'none';
+    claimerPopup.querySelector('.popup').classList.remove('show');
+    setTimeout(() => {
+        claimerPopup.style.display = 'none';
+    }, 600);
 });
 
 window.addEventListener('click', (event) => {
-    if (event.target === popup) {
-        claimerPopup.style.display = 'none';
+    if (event.target === claimerPopup) {
+        claimerPopup.querySelector('.popup').classList.remove('show');
+        setTimeout(() => {
+            claimerPopup.style.display = 'none';
+        }, 600);
     }
 });
-
