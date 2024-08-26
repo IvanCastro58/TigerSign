@@ -282,15 +282,14 @@ input[type="date"] {
 }
 
 .popup-content canvas {
+    max-width: 100%; 
+    height: auto; 
     margin: 20px 0;
-    width: 500px;
-    height: 200px;
     border: 2px solid var(--blackish);
     border-radius: 5px;
     background-color: #f8f8f8;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
-
 
 .popup-message{
     margin-top: 20px;
@@ -616,10 +615,6 @@ video {
         padding: 8px 18px;
     }
 
-    .popup-content canvas {
-        width: 450px;
-    }
-
     .modal-content {
         max-width: 500px;
     }
@@ -708,11 +703,6 @@ video {
         padding: 6px 16px;
     }
 
-    .popup-content canvas {
-        width: 350px;
-        height: 150px;
-    }
-
     .modal-content {
         max-width: 450px;
     }
@@ -794,11 +784,6 @@ video {
         padding: 6px 16px;
     }
 
-    .popup-content canvas {
-        width: 300px;
-        height: 150px;
-    }
-
     .modal-content {
         max-width: 400px;
     }
@@ -874,10 +859,5 @@ video {
     .submit-btn {
         font-size: 12px;
         padding: 6px 16px;
-    }
-
-    .popup-content canvas {
-        width: 250px;
-        height: 120px;
     }
 }
