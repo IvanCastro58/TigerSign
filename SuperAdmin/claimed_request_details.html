@@ -187,7 +187,7 @@
                             </div>
                             <div class="image-container">
                                 <button class="expand-button" onclick="openPopup()"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button> <!-- Expand icon -->
-                                <img src="../assets/images/background.jpg" alt="Sample Image">
+                                <img src="../assets/images/logo1.png" alt="Sample Image">
                             </div>
                         </div>
                     </div>
@@ -205,14 +205,41 @@
                             </div>
                             <div class="image-container">
                                 <button class="expand-button" onclick="openPopup()"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button> 
-                                <img src="../assets/images/background.jpg" alt="Sample Image">
+                                <img src="../assets/images/google.png" alt="Sample Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="claimer-letter-modal" class="popup-overlay">
+                    <div class="popup">
+                        <div class="popup-header">
+                            <strong>AUTHORIZATION LETTER & ID PHOTO AUTHENTICITY</strong>
+                            <span class="popup-close" id="popup-close">&times;</span>
+                        </div>
+                        <div class="popup-content">
+                            <div class="info-text">
+                                <i class="bi bi-info-circle"></i>
+                                <p class="smaller-text">Please note that while the system provides an initial assessment of signature matching, the result is <strong>not guaranteed to be 100% accurate</strong>. Factors such as blurry images, different angles, or variations in handwriting can affect the accuracy of the match. <strong>Admins are required to manually review and verify that the signatures and documents align correctly to ensure proper authentication.</strong></p>
+                            </div>
+                            <div class="image-container-wrapper">
+                                <div class="image-container-left">
+                                    <button class="expand-button" onclick="openPopup()"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+                                    <img src="../assets/images/background.jpg" alt="Authorization Letter Image">
+                                </div>
+                                <div class="image-container-right">
+                                    <button class="expand-button" onclick="openPopup()"><i class="fa-solid fa-up-right-and-down-left-from-center"></i></button>
+                                    <img src="../assets/images/tigersign.png" alt="ID Photo Image">
+                                </div>
+                            </div>
+                            <div class="signature-result">
+                                <i class="bi bi-check-circle"></i> Signature Matched
                             </div>
                         </div>
                     </div>
                 </div>
                 <div id="imagePopup" class="image-popup">
                     <span class="close-button" onclick="closePopup()">&times;</span>
-                    <img class="popup-image" src="../assets/images/background.jpg" alt="Expanded Image">
+                    <img class="popup-image" alt="Expanded Image">
                 </div>
             </div>
         </div>
