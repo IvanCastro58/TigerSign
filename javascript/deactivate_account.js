@@ -1,4 +1,4 @@
-const deactivateButton = document.querySelector('.activate-btn');
+const deactivateButton = document.querySelector('.deactivate-btn');
 const confirmPopup = document.getElementById('confirm-deactivation-popup');
 const confirmPopupElement = confirmPopup.querySelector('.popup');
 const confirmCloseButton = document.getElementById('popup-close');

@@ -51,6 +51,7 @@ body {
     padding: 5px 10px;
     color: var(--blackish);
     font-size: 14px;
+    appearance: none;
 }
 
 .nav-item1 .drop-icon i {

@@ -200,7 +200,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.btn-activate .activate-btn{
+.btn-activate .deactivate-btn{
     background-color: #DB3444;
     color: var(--white);
     border: none;
